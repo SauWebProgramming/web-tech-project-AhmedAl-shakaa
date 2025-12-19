@@ -125,12 +125,16 @@ function createBookCard(book, mode = "list") {
 
   const btnDetails = node.querySelector(".btn-details");
   const btnFav = node.querySelector(".btn-fav");
+  const favBadge = node.querySelector(".fav-badge");
 
   btnDetails.dataset.id = String(book.id);
   btnFav.dataset.id = String(book.id);
 
   // Favori buton yazısı
   btnFav.textContent = isFav(book.id) ? "★ Favoride" : "☆ Favori";
+  // Kart üstünde küçük yıldız (favori işareti)
+  if (favBadge) favBadge.classList.toggle("d-none", !isFav(book.id));
+
 
   // Favoriler ekranında "Sil" olsun
   if (mode === "fav") {
@@ -276,3 +280,4 @@ init().catch(err => {
   console.error(err);
   els.booksGrid.innerHTML = `<p class="text-danger">Hata: ${err.message}</p>`;
 });
+

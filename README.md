@@ -15,5 +15,3 @@ Okuma deneyimini sade ve keyifli hale getirmeyi amaçlayan, farklı türlerden k
 - JavaScript
 - JSON
 
-==> Canlı Demo
-Proje GitHub Pages üzerinden erişime açılmıştır.

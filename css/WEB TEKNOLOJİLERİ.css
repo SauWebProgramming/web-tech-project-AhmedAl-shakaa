@@ -1,0 +1,142 @@
+/* =========================
+   Theme on Bootstrap
+========================= */
+:root{
+  --paper: #f7f2e8;
+  --paper2:#fbf7ef;
+  --ink:#1f1b16;
+  --ink2:#4b4036;
+  --line: rgba(31,27,22,.18);
+  --line2: rgba(31,27,22,.10);
+  --accent:#7a5a2a;
+}
+
+body{
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(176,138,58,.08), transparent 55%),
+    radial-gradient(900px 500px at 80% 10%, rgba(122,90,42,.07), transparent 55%),
+    linear-gradient(var(--paper), var(--paper));
+  color: var(--ink);
+}
+
+/* Header */
+.header-classic{
+  background: linear-gradient(var(--paper2), #fff);
+  box-shadow: 0 6px 24px rgba(31,27,22,.06);
+}
+.title-classic{
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  text-shadow: 0 1px 0 rgba(255,255,255,.8);
+}
+.controls-wrap{
+  min-width: min(520px, 100%);
+}
+.ornament{
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  letter-spacing: 5px;
+}
+.site-title-btn{
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;        
+  font-weight: 800;       
+  letter-spacing: .6px;   
+  color: var(--ink);
+
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.site-title-btn:hover,
+.site-title-btn:focus,
+.site-title-btn:active{
+  text-decoration: none;
+  color: var(--ink);
+  outline: none;
+}
+
+.header-classic .text-secondary{
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;        
+  font-weight: 500;      
+  letter-spacing: .4px;
+  color: var(--ink2);     
+  opacity: .9;            
+}
+
+/* Views */
+.view{ min-height: 40vh; }
+
+/* panels */
+.classic-panel{
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    linear-gradient(#fff, #fbfbfb),
+    repeating-linear-gradient(
+      0deg,
+      rgba(31,27,22,.03),
+      rgba(31,27,22,.03) 1px,
+      transparent 1px,
+      transparent 22px
+    );
+  box-shadow: 0 14px 50px rgba(31,27,22,.10);
+}
+
+/* Cards */
+.classic-card{
+  border-radius: 16px;
+  background: linear-gradient(#fff, #fbfbfb);
+  box-shadow:
+    0 10px 30px rgba(31,27,22,.08),
+    inset 0 1px 0 rgba(255,255,255,.75);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.classic-card:hover{
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 40px rgba(31,27,22,.12),
+    inset 0 1px 0 rgba(255,255,255,.75);
+}
+
+.card-titlex{
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Cover */
+.classic-cover{
+  border: 1px solid var(--line2);
+  box-shadow: 0 10px 22px rgba(31,27,22,.12);
+  background: #eee;
+}
+
+/* Favori buton rengi */
+.classic-fav{
+  border-color: rgba(122,90,42,.35) !important;
+  color: var(--accent) !important;
+}
+.classic-fav:hover{
+  background: rgba(122,90,42,.10) !important;
+}
+
+/* Footer */
+.footer-pill{
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid var(--line2);
+  border-radius: 999px;
+  background: rgba(255,255,255,.6);
+}
+
+/* Small polish for form focus */
+.form-control:focus, .form-select:focus{
+  border-color: rgba(122,90,42,.45);
+  box-shadow: 0 0 0 .25rem rgba(122,90,42,.12);
+}

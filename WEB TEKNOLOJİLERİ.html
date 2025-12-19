@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Kitap Kütüphanesi (SPA)</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Proje CSS -->
+  <link rel="stylesheet" href="css/WEB TEKNOLOJİLERİ.css" />
+</head>
+
+<body>
+  <!-- =========================
+               HEADER 
+  ========================== -->
+  <header class="border-bottom sticky-top header-classic">
+    <div class="container py-3">
+      <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-3">
+        <div>
+          <button id="homeBtn" class="site-title-btn" type="button">
+          📚 Kitap Kütüphanesi
+          </button>
+          <div class="text-secondary small">Her kitap yeni bir yolculuk
+          </div>
+        </div>
+
+        <div class="d-grid d-md-flex gap-2 controls-wrap">
+          <input id="searchInput" class="form-control" type="search" placeholder="Kitap adına göre ara..." />
+
+          <select id="categorySelect" class="form-select">
+            <option value="all">Tüm Kategoriler</option>
+          </select>
+
+          <select id="yearSelect" class="form-select">
+            <option value="all">Tüm Yıllar</option>
+          </select>
+
+          <button id="showFavBtn" class="btn btn-outline-dark" type="button">⭐ Favorilerim</button>
+        </div>
+      </div>
+
+      <div class="ornament text-center mt-3" aria-hidden="true">❦</div>
+    </div>
+  </header>
+
+  <!-- =========================
+       MAIN (SPA Views)
+    gizle/göster (Bootstrap)
+  ========================== -->
+  <main class="container py-4">
+
+    <!-- VIEW 1: Liste -->
+    <section id="listView" class="view">
+      <div id="booksGrid" class="row g-3"></div>
+      <p id="emptyState" class="text-secondary mt-3 d-none">Sonuç bulunamadı.</p>
+    </section>
+
+    <!-- VIEW 2: Detay -->
+    <section id="detailView" class="view d-none">
+      <div class="classic-panel p-3 p-md-4">
+        <div class="row g-3 align-items-start">
+          <div class="col-12 col-md-4">
+            <img id="detailCover" class="img-fluid rounded-3 classic-cover" alt="" />
+          </div>
+
+          <div class="col-12 col-md-8">
+            <h2 id="detailTitle" class="title-classic mb-2"></h2>
+
+            <div class="d-flex flex-wrap gap-3 text-secondary small mb-2">
+              <span><b>Yazar:</b> <span id="detailAuthor"></span></span>
+              <span><b>Yıl:</b> <span id="detailYear"></span></span>
+              <span><b>Kategori:</b> <span id="detailCategory"></span></span>
+              <span><b>Sayfa:</b> <span id="detailPages"></span></span>
+              <span><b>Puan:</b> ⭐ <span id="detailRating"></span></span>
+            </div>
+
+            <p id="detailSummary" class="text-secondary mb-3"></p>
+
+            <div class="d-flex gap-2">
+              <button id="backBtn" class="btn btn-outline-dark" type="button">← Geri</button>
+              <button id="detailFavBtn" class="btn btn-outline-warning classic-fav" type="button">☆ Favoriye Ekle</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: Favoriler -->
+    <section id="favView" class="view d-none">
+      <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-2">
+        <h2 class="title-classic m-0">⭐ Favorilerim</h2>
+        <button id="backToListBtn" class="btn btn-outline-dark" type="button">← Listeye Dön</button>
+      </div>
+
+      <div id="favGrid" class="row g-3"></div>
+      <p id="favEmpty" class="text-secondary mt-3 d-none">Henüz favori eklemediniz.</p>
+    </section>
+
+  </main>
+
+  <footer class="py-4">
+    <div class="container text-center text-secondary">
+      <small class="footer-pill">Kitaplarla dolu sade bir keşif alanı
+</small>
+    </div>
+  </footer>
+
+  <!-- =========================
+               Card
+  ========================== -->
+  <template id="bookCardTpl">
+    <div class="col-12 col-sm-6 col-lg-4">
+      <article class="card h-100 shadow-sm border-0 classic-card">
+        <img class="card-img-top card-cover" alt="" loading="lazy" style="height:240px;object-fit:cover;">
+        <div class="card-body d-grid gap-2">
+          <h5 class="m-0 card-titlex"></h5>
+
+          <div class="d-flex justify-content-between text-secondary small">
+            <span class="card-author"></span>
+            <span class="card-year"></span>
+          </div>
+
+          <div class="d-flex justify-content-between text-secondary small">
+            <span class="card-category"></span>
+            <span class="card-rating"></span>
+          </div>
+
+          <div class="d-flex gap-2 mt-1">
+            <button class="btn btn-outline-dark w-100 btn-details" type="button" data-action="details">Detay</button>
+            <button class="btn btn-outline-warning w-100 btn-fav classic-fav" type="button" data-action="fav">☆ Favori</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </template>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Proje JS -->
+  <script src="js/WEB TEKNOLOJİLERİ.js"></script>
+</body>
+</html>

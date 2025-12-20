@@ -143,7 +143,24 @@ function createBookCard(book, mode = "list") {
     btnFav.classList.remove("btn-outline-warning");
     btnFav.classList.add("btn-outline-dark");
   }
+// Kategoriye göre kart stili (class ekleme)
+const catClassMap = {
+  "Novel": "cat-novel",
+  "Fantasy": "cat-fantasy",
+  "Psychology": "cat-psychology",
+  "History": "cat-history",
+  "Business": "cat-business",
+  "Software": "cat-software",
+  "Self-Help": "cat-selfhelp",
+  "Science Fiction": "cat-scifi",
+  "Classic": "cat-classic",
+  "Philosophy": "cat-philosophy"
+};
 
+// Card'a kategori class'ı ekle (eşleşme yoksa eklemez)
+const cardEl = node.querySelector(".classic-card");
+const cls = catClassMap[book.category];
+if (cardEl && cls) cardEl.classList.add(cls);
   return node;
 }
 
@@ -280,4 +297,5 @@ init().catch(err => {
   console.error(err);
   els.booksGrid.innerHTML = `<p class="text-danger">Hata: ${err.message}</p>`;
 });
+
 

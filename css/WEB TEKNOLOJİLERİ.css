@@ -116,7 +116,32 @@ body{
   box-shadow: 0 10px 22px rgba(31,27,22,.12);
   background: #eee;
 }
+/* Kategoriye göre görsel vurgu*/
+.classic-card{
+  position: relative; 
+  overflow: hidden;
+}
 
+.classic-card::before{
+  content: "";
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  height: 4px;       
+  background: transparent;
+}
+
+/* Her kategori için farklı vurgu */
+.classic-card.cat-novel::before{ background: rgba(122,90,42,.55); }
+.classic-card.cat-fantasy::before{ background: rgba(46,125,50,.55); }
+.classic-card.cat-psychology::before{ background: rgba(25,118,210,.55); }
+.classic-card.cat-history::before{ background: rgba(94,53,177,.55); }
+.classic-card.cat-business::before{ background: rgba(0,121,107,.55); }
+.classic-card.cat-software::before{ background: rgba(84,110,122,.60); }
+.classic-card.cat-selfhelp::before{ background: rgba(245,124,0,.55); }
+.classic-card.cat-scifi::before{ background: rgba(63,81,181,.55); }
+.classic-card.cat-classic::before{ background: rgba(121,85,72,.55); }
+.classic-card.cat-philosophy::before{ background: rgba(97,97,97,.60); }
 /* Favori buton rengi */
 .classic-fav{
   border-color: rgba(122,90,42,.35) !important;
@@ -125,7 +150,21 @@ body{
 .classic-fav:hover{
   background: rgba(122,90,42,.10) !important;
 }
-
+/*Favori yıldızı (kart üstünde)*/
+.fav-badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid rgba(122,90,42,.30);
+  background: rgba(255,255,255,.75);
+  color: var(--accent);
+  font-size: 14px;
+  line-height: 1;
+  box-shadow: 0 6px 16px rgba(31,27,22,.10);
+}
 /* Footer */
 .footer-pill{
   display: inline-block;
@@ -140,3 +179,4 @@ body{
   border-color: rgba(122,90,42,.45);
   box-shadow: 0 0 0 .25rem rgba(122,90,42,.12);
 }
+
